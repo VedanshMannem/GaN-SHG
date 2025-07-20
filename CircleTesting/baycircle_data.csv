@@ -29,10 +29,6 @@ iteration,radius_um,GaNzSpan_um,SapSpan_um,theta_deg,power,status
 28,1.043244006984003e-06,3e-06,5.0,89.0,1.4253793285034072e-16,success
 29,2e-06,3e-06,5.0,0.3725467222639344,1.0593991908760905e-12,success
 30,5.32e-07,1.6271456996594604e-06,5.0,70.80824452295282,0.0,"error: ""Can not find result 'power' in the result provider 'GaNDFT2'"""
-
-New data:
-iteration,radius_um,GaNzSpan_um,SapSpan_um,theta_deg,power,status
-iteration,radius_um,GaNzSpan_um,SapSpan_um,theta_deg,power,status
 1,1.266e-06,2.0319999999999998e-06,5.0,44.5,3.9548825501153025e-13,success
 2,1.2287562686204908e-06,2.731433856964111e-06,5.0,4.696017749607563,3.059385419339e-13,success
 3,1.365309000443667e-06,1.5763517409265042e-06,5.0,48.619990029372275,1.7177383542615341e-12,success
