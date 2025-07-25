@@ -13,33 +13,37 @@ from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 
 chi1 = 5.3458
 c = 299792458
-wv = 1.064e-6 # wavelength
+wv = 0.73e-6  # wavelength
+chi2 = 1.26e-10 
 
 # x & y span up to 2 wv
-def runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta=40): 
-    
+def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40): 
+
     if(abs(DFTz) > 0.5 * AlNzSpan):
         return 0.0  
-    
-    # centers most things
-    x = 0
-    y = 0
-    z = 0
 
-    PlaneZ = -0.5 * AlNzSpan - 0.532e-6 
+    PlaneZ = -0.5 * AlNzSpan - 0.532e-6
+    print("PlaneZ:", PlaneZ)
     
-    SapzSpan = 2e-6 
-    Sapz = -0.5 * (AlNzSpan + SapzSpan)
+    SapzSpan = 4e-6 
+    print("SapzSpan:", SapzSpan)
+    Sapz = z - 0.5 * (AlNzSpan + SapzSpan)
+    print("Sapz:", Sapz)
     span = 10e-6 # x & y span for sapphire
 
-    FDTDzMin = -0.5 * AlNzSpan - wv 
-    FDTDzMax =  AlNzSpan * 0.5 + wv
-    FDTDspan = 2 * wv 
-    AlNDFTz2 = 0.5 * AlNzSpan + 0.532e-6
+    FDTDzMin = -0.5 * AlNzSpan -  wv
+    print("FDTDzMin:", FDTDzMin)
+    FDTDzMax =  AlNzSpan * 0.5 +  wv
+    print("FDTDzMax:", FDTDzMax)
+    FDTDspan = 2 * wv
+    print("FDTDspan:", FDTDspan)
+    AlNDFTz2 = 0.5 * AlNzSpan + 0.5 * wv
+    print("AlNDFTz2:", AlNDFTz2)
 
     mesh = 0.1e-6  # only for testing - increase for final runs
+    print("Mesh:", mesh)
 
-    fdtd = lumapi.FDTD(hide = True)
+    fdtd = lumapi.FDTD(hide = False)
 
     fdtd.eval("q=[2.1297;2.1297;2.1712];setmaterial(addmaterial(\"(n,k) Material\"), \"name\", \"AlN\");setmaterial(\"AlN\", \"Anisotropy\", 1);setmaterial(\"AlN\", \"Refractive Index\", q);")
 
@@ -67,9 +71,10 @@ def runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta=40):
                     ("z", PlaneZ),
                     ("x span", FDTDspan),
                     ("y span", FDTDspan),
+                    ("amplitude", 3.7e8),
                     ("angle theta", theta),
-                    ("wavelength start", 1.064e-6),
-                    ("wavelength stop", 1.064e-6))),
+                    ("wavelength start", wv),
+                    ("wavelength stop", wv))),
 
         ("AlNfilm", (
                     ("x", x),
@@ -124,7 +129,7 @@ def runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta=40):
     fdtd.eval("E2 = rectilineardataset(\"EM Fields\", getresult(\"AlNDFT\", \"x\"), getresult(\"AlNDFT\", \"y\"), getresult(\"AlNDFT\", \"z\"));")
     fdtd.eval("chi1 = 5.3458;")
     fdtd.eval("Ex= getresult(\"AlNDFT\", \"Ex\");Ey= getresult(\"AlNDFT\", \"Ey\");Ez= getresult(\"AlNDFT\", \"Ez\");")
-    fdtd.eval("E2x = (2 * 11.33 * Ez * Ex) / chi1; E2y = (2 * 11.33 * Ez * Ey) / chi1; E2z = (11.33 * (Ex ^ 2 + Ey ^ 2) - 22.66 * Ez ^ 2) / chi1;")
+    fdtd.eval(f"E2x = (2 * {chi2} * Ez * Ex) / chi1; E2y = (2 * {chi2} * Ez * Ey) / chi1; E2z = ({chi2} * (Ex ^ 2 + Ey ^ 2) - {chi2} *  Ez ^ 2) / chi1;")
     fdtd.eval("E2.addparameter(\"lambda\", 299792458/getresult(\"AlNDFT\", \"f\"), \"f\", getresult(\"AlNDFT\", \"f\"));")
     fdtd.eval("E2.addattribute(\"E\", E2x, E2y, E2z);")
     
@@ -155,4 +160,8 @@ def runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta=40):
 
     result = fdtd.getresult("AlNDFT2", "power")
 
-    return real(result)[0][0]
+    return real(result)[0][0] # for raw transmission - BOp
+
+    # return real(result)[0][0] / (3.7e8) # for actual transmission
+# 9.125e-07,9.125e-07,9.125e-07,0.0,40.0,0.16375098715786873,success
+# print(runSim1(9.125e-07, 9.125e-07, 9.125e-07, 0.0, 40.0))

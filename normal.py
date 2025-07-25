@@ -17,6 +17,7 @@ from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 chi1 = 5.3458
 theta = 40 # angle of plane wave
 c = 299792458
+chi2 = 1.26 * 10 ** -12 # quartz chi2
 
 GaNx = 0
 GaNy = 0
@@ -86,6 +87,7 @@ def runSim1():
                     ("x span", FDTDspan),
                     ("y span", FDTDspan),
                     ("angle theta", theta),
+                    ("amplitude", 3.7e8),
                     ("wavelength start", 1.064e-6),
                     ("wavelength stop", 1.064e-6))),
 
@@ -144,8 +146,8 @@ def runSim1():
     # Full eval script to get the imported source
     fdtd.eval("E2 = rectilineardataset(\"EM Fields\", getresult(\"GaNDFT\", \"x\"), getresult(\"GaNDFT\", \"y\"), getresult(\"GaNDFT\", \"z\"));")
     fdtd.eval("chi1 = 5.3458;")
-    fdtd.eval("Ex= getresult(\"GaNDFT\", \"Ex\");Ey= getresult(\"GaNDFT\", \"Ey\");Ez= getresult(\"GaNDFT\", \"Ez\");")
-    fdtd.eval("E2x = (2 * 11.33 * Ez * Ex) / chi1; E2y = (2 * 11.33 * Ez * Ey) / chi1; E2z = (11.33 * (Ex ^ 2 + Ey ^ 2) - 22.66 * Ez ^ 2) / chi1;")
+    fdtd.eval(f"Ex= getresult(\"GaNDFT\", \"Ex\");Ey= getresult(\"GaNDFT\", \"Ey\");Ez= getresult(\"GaNDFT\", \"Ez\");")
+    fdtd.eval(f"E2x = (2 * 11.33 * {chi2} * Ez * Ex) / chi1; E2y = (2 * 11.33 * {chi2} * Ez * Ey) / chi1; E2z = (11.33 * {chi2} * (Ex ^ 2 + Ey ^ 2) - 22.66 * {chi2} * Ez ^ 2) / chi1;")
     fdtd.eval("E2.addparameter(\"lambda\", 299792458/getresult(\"GaNDFT\", \"f\"), \"f\", getresult(\"GaNDFT\", \"f\"));")
     fdtd.eval("E2.addattribute(\"E\", E2x, E2y, E2z);")
     
@@ -176,7 +178,7 @@ def runSim1():
 
     result = fdtd.getresult("GaNDFT2", "power")
 
-    return real(result)
+    return real(result)[0][0]
 
 power = runSim1()
 print(f"Parameters used: \n span: {span} \n GaNzSpan: {GaNzSpan} \n mesh: {mesh} \n Sapphire: {SapSpan} \n everything else: 1.064e-6")

@@ -1,0 +1,56 @@
+All processes are communicating and ready to proceed to simulation...
+Ansys Lumerical 2025 R1 FDTD Solver Version 8.33.3999 (Windows 64bit)
+ expires (month/day/year): 11/17/2025
+using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
+license host: 1055@license.cnsi.ucsb.edu
+current time: Thu Jul 24 18:10:48 2025
+Running on host: computer
+host available memory (GiB) 6.311
+
+All processes are communicating and ready to proceed to simulation...
+Running fsp file: C:\Program Files\Lumerical\v251\bin\fdtd-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFek5nbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ25CQ2FtZG1RMEp2WVhSemJEQTBiM280UjI5eVVGUkNSRmRZZVdSVFYxbFVPVFJqVUZaM1MwdEdWWGxtYlcxb1owMXlaemRIY0hrMlJreE9iRlZMZDFSV1RsOUJjMDVhUkY5TFpraGxRMmhaWlhOSWFVNXZYMkZmUlVWM1IwTmlWeTEyWVV4QmVWbGZhVEZSWmpWWlUybFFaRFJFVnpKRVgzZ3RiMmN0TFhoWVdXZGhPRFZHUzBGSFltNVdTV296ZW1SWlUyMHRNV2N5Vm1odFdFbExRbGh2TTNkVUxWaGhlV2xaUVZFeFlsVndObFF3UjJOTmEwaHhOM2RTTlhwUWFXRlJibWxWT0dOT2NYTlBNVFExVTBOcmJWQnBjV1p5VDBKakxVczVhbTlCTUhSMU0zWmljM290VWxoeGNuZENXVGxQV0hjdFpsbGhVSFpKY1RsclRVNWpkRzlpWWpsS2FGcEpibXAwVFhCS1l6VnZPVVl4WlZsMFRtdDNZbEJzUWtwSFRXeHpaRzF1Y2pSV2QxVjBURlZzVGxWNlFXbEJkRkpHYjBFNE1rOXNZMjB4YVRoNWEzWjFkakJGUTJ4SWRXTktXRlF3UlZaaGNXc3llalZ6ZWtSNFJFOXlUMnN0U25Wb1dRbzhMMDFUUno0SzwvREFUQT48L0FOU1lTX0xJQ0VOU0lOR19DT05URVhUX0RBVEE+CkFOU1lTX0xJQ0VOU0lOR19XT1JLRkxPV19TRVNTSU9OPTxEQVRBPjxJRD5jb21wdXRlcl9tYW5uZV8yNTE8L0lEPjwvREFUQT4K C:/Users/manne/OneDrive/RMP/triangle-test.fsp
+Estimate of memory required: 0.122 GiB
+
+number of processors is 8
+processors are distributed as: 2x2x2
+Peak memory used by end of initialization: 0.075242 GiB
+Running 3D Simulation
+Starting meshing
+Simulation size in gridpoints: 39 x 37 x 47
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.062500 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 39 x 37 x 47
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.078125 seconds of CPU time
+Starting meshing
+Simulation size in gridpoints: 39 x 37 x 47
+Refined 0 mesh cells (0.000000%)
+Completed meshing!
+Meshing complete in 0.062500 seconds of CPU time
+finished material properties
+Meshing Time: 0.247311 seconds, Init Electrical Material Time: 0.076020 seconds, Init Magnetic Material Time: 0.001109
+Using selected optimization level: 2
+Selecting 3d kernel for splitFieldDirection=0 and optLevel=2
+-----------------------------------------
+Beginning initialization of 3D Simulation
+Starting to add sources to simulation
+Adding 3D Gaussian source propagating in Z
+Starting to add boundary conditions to simulation
+Adding 3D Parallel bloch BC
+Adding 3D Parallel BC
+Adding 3D Parallel bloch BC
+Adding 3D Parallel BC
+Adding 3D PML BC
+Adding 3D Parallel BC
+Starting to add monitors to Simulation
+Adding analysis monitor
+Adding 3D DFT monitor
+Finished initialization of 3D Simulation
+-----------------------------------------
+Peak memory used by end of meshing: 0.082753 GiB
+All processes are communicating and ready to proceed to simulation...
+Starting 18965 total iterations
+0.253096% complete. Elapsed simulation time: 2.53096e-15 secs. Max time remaining: 18 mins, 35 secs. Auto Shutoff: 1

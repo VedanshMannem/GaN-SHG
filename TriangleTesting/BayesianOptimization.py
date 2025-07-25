@@ -13,13 +13,11 @@ from ax.api.client import Client
 from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 from collections import deque
 from triangle import runSim1
-wv = 1.064e-6  # wavelength
+wv = 0.73e-6  # wavelength
 
 iteration_counter = 0
 
 power_history = deque(maxlen=100)
-
-norm = 2.34482413e-13
 
 def objective_function(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta):
 
@@ -46,17 +44,11 @@ def objective_function(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta):
 
         result = float(runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta))
 
-        standardized_power = result / norm
+        standardized_power = result
 
         print(f"Power result: {result} (standardized: {standardized_power})")
         
-        # Add small random jitter if result is exactly 0 to help Ax
-        if result == 0.0:
-            import random
-            jitter = random.uniform(-1e-12, 1e-12)
-            standardized_power = jitter / norm
-            print(f"  Added jitter for zero result: {jitter} -> standardized: {standardized_power}")
-
+        
         log_to_csv(iteration_counter, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, result, "success")
 
         return standardized_power
@@ -71,7 +63,7 @@ def objective_function(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta):
 
 def log_to_csv(iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, status):
     try:
-        with open("second_bayesian_optimization.csv", "a", newline='') as file:
+        with open("TriangleTesting/fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow([iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, status])
         print(f"Logged iteration {iteration} to CSV")
@@ -80,51 +72,12 @@ def log_to_csv(iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, 
         import traceback
         traceback.print_exc()
 
-# def load_historical_data(max_trials=50):
-#     historical_params = []
-#     historical_objectives = []
-
-#     try:
-#         with open("baycircle_data.csv", 'r') as file:
-#             reader = csv.reader(file)
-#             headers = next(reader)
-            
-#             count = 0
-#             for row in reader:
-#                 if len(row) >= 6 and row[5] != "0.0" and "success" in row[-1]:
-#                     try:
-#                         params = {
-#                             "radius": float(row[1]) * 1e6,  
-#                             "AlNzSpan": float(row[2]) * 1e6, 
-#                             "theta": float(row[4])
-#                         }
-                        
-#                         power_value = float(row[5])
-#                         standardized_power = power_value / norm
-#
-#                         historical_params.append(params)
-#                         historical_objectives.append({"power": standardized_power})
-                        
-#                         count += 1
-#                         if count >= max_trials:
-#                             break
-                            
-#                     except (ValueError, IndexError):
-#                         continue
-        
-#         print(f"Loaded {len(historical_params)} historical trials for warm-starting")
-#         return historical_params, historical_objectives
-        
-#     except FileNotFoundError:
-#         print("No historical data file found, starting fresh")
-#         return [], []
-
 def run_bayesian_optimization():
     try:
-        with open("second_bayesian_optimization.csv", "a", newline='') as file:
+        with open("TriangleTesting/fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow(["iteration", "x1_um", "x2_um", "x3_um", "y1_um", "y2_um", "y3_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
-        print("Initialized second_bayesian_optimization.csv for logging")
+        print("Initialized fixed_BOp.csv for logging")
     except Exception as e:
         print(f"Error initializing CSV file: {e}")
         import traceback
@@ -175,7 +128,7 @@ def run_bayesian_optimization():
             ),
             RangeParameterConfig(
                 name="DFTz",
-                bounds=(-0.25 * wv * 1e6, wv * 1e6),  
+                bounds=(-1 * wv * 1e6, wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
@@ -187,23 +140,11 @@ def run_bayesian_optimization():
     )
 
     client.configure_optimization(objective="power")
-    
-    # historical_params, historical_objectives = load_historical_data(max_trials=60)
-    # if historical_params and historical_objectives:
-    #     print(f"Warm-starting optimization with {len(historical_params)} historical trials...")
-        
-    #     for params, objective in zip(historical_params, historical_objectives):
-    #         trial_index = client.attach_trial(parameters=params)
-    #         client.complete_trial(trial_index=trial_index, raw_data=objective)
-            
-    #     print("Historical data injected successfully!")
-    # else:
-    #     print("No historical data available, starting fresh optimization")
-    
+
     print("Starting Bayesian Optimization...")
     print("=" * 60)
     
-    num_iterations = 30  
+    num_iterations = 10
     
     for i in range(num_iterations):
         print(f"\nIteration {i+1}/{num_iterations}")
@@ -272,7 +213,7 @@ def run_bayesian_optimization():
     else:
         best_power = prediction['power']
 
-    print(f"\nFinal Best Objective (Power): {best_power:.3f} (standardized) and {(best_power / norm):.6e} (original)")
+    print(f"\nFinal Best Objective (Power): {best_power:.3f} (standardized) and {(best_power):.6e} (original)")
     print("Final Best Parameters:")
 
     final_x1 = float(best_parameters["x1"]) * 1e-6

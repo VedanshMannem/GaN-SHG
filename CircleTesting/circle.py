@@ -13,30 +13,35 @@ from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 
 chi1 = 5.3458
 c = 299792458
-wv = 1.064e-6 # wavelength
+wv = 0.73e-6 # wavelength
+chi2 = 1.26e-10 
 
-def runSim1(radius, AlNzSpan, DFTz, theta=40): 
+def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40): 
     
     if(abs(DFTz) > 0.5 * AlNzSpan):
         return 0.0  
-    
-    # centers most things
-    x = 0
-    y = 0
-    z = 0
 
-    PlaneZ = -0.5 * AlNzSpan - 0.532e-6 
+    PlaneZ = -0.5 * AlNzSpan - 0.5 * wv
+    print("PlaneZ:", PlaneZ)
     
     SapzSpan = 2 * wv
-    Sapz = -0.5 * (AlNzSpan + SapzSpan)
+    print("SapzSpan:", SapzSpan)
+    Sapz = z - 0.5 * (AlNzSpan + SapzSpan)
+    print("Sapz:", Sapz)
     span = 10e-6 # x & y span for sapphire
+    print("Span:", span)
 
-    FDTDzMin = -0.5 * AlNzSpan - wv 
-    FDTDzMax =  AlNzSpan * 0.5 + wv
-    FDTDspan = 4 * wv
-    AlNDFTz2 = 0.5 * AlNzSpan + 0.532e-6
+    FDTDzMin = -0.5 * AlNzSpan - 2 * wv 
+    print("FDTDzMin:", FDTDzMin)
+    FDTDzMax =  AlNzSpan * 0.5 + 2 * wv
+    print("FDTDzMax:", FDTDzMax)
+    FDTDspan = 3 * wv
+    print("FDTDspan:", FDTDspan)
+    AlNDFTz2 = 0.5 * AlNzSpan + 0.5 * wv
+    print("AlNDFTz2:", AlNDFTz2)
 
     mesh = 0.1e-6  # only for testing - increase for final runs
+    print("Mesh:", mesh)
 
     fdtd = lumapi.FDTD(hide = True)
 
@@ -67,8 +72,9 @@ def runSim1(radius, AlNzSpan, DFTz, theta=40):
                     ("x span", FDTDspan),
                     ("y span", FDTDspan),
                     ("angle theta", theta),
-                    ("wavelength start", 1.064e-6),
-                    ("wavelength stop", 1.064e-6))),
+                    ("amplitude", 3.7e8),
+                    ("wavelength start", wv),
+                    ("wavelength stop", wv))),
 
         ("AlNfilm", (
                     ("x", x),
@@ -127,7 +133,7 @@ def runSim1(radius, AlNzSpan, DFTz, theta=40):
     fdtd.eval("E2 = rectilineardataset(\"EM Fields\", getresult(\"AlNDFT\", \"x\"), getresult(\"AlNDFT\", \"y\"), getresult(\"AlNDFT\", \"z\"));")
     fdtd.eval("chi1 = 5.3458;")
     fdtd.eval("Ex= getresult(\"AlNDFT\", \"Ex\");Ey= getresult(\"AlNDFT\", \"Ey\");Ez= getresult(\"AlNDFT\", \"Ez\");")
-    fdtd.eval("E2x = (2 * 11.33 * Ez * Ex) / chi1; E2y = (2 * 11.33 * Ez * Ey) / chi1; E2z = (11.33 * (Ex ^ 2 + Ey ^ 2) - 22.66 * Ez ^ 2) / chi1;")
+    fdtd.eval(f"E2x = (2 * {chi2} * Ez * Ex) / chi1; E2y = (2 * {chi2} * Ez * Ey) / chi1; E2z = ({chi2} * (Ex ^ 2 + Ey ^ 2) - {chi2} * Ez ^ 2) / chi1;")
     fdtd.eval("E2.addparameter(\"lambda\", 299792458/getresult(\"AlNDFT\", \"f\"), \"f\", getresult(\"AlNDFT\", \"f\"));")
     fdtd.eval("E2.addattribute(\"E\", E2x, E2y, E2z);")
     
@@ -159,5 +165,3 @@ def runSim1(radius, AlNzSpan, DFTz, theta=40):
     result = fdtd.getresult("AlNDFT2", "power")
 
     return real(result)[0][0]
-
-# print(runSim1(0.75 * wv,  1.5 * wv, 50))
