@@ -17,27 +17,33 @@ wv = 0.73e-6  # wavelength
 chi2 = 1.26e-10 
 
 # x & y span up to 2 wv
-def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40): 
+def runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40): 
+
+    x= 0
+    y= 0
+    z= 0
 
     if(abs(DFTz) > 0.5 * AlNzSpan):
         return 0.0  
 
-    PlaneZ = -0.5 * AlNzSpan - 0.532e-6
+    PlaneZ = -0.5 * AlNzSpan - 0.5 * wv
     print("PlaneZ:", PlaneZ)
     
-    SapzSpan = 4e-6 
-    print("SapzSpan:", SapzSpan)
+    SapzSpan = 2 * wv
     Sapz = z - 0.5 * (AlNzSpan + SapzSpan)
+    span = 2.5 * wv  # x & y span for sapphire
+
     print("Sapz:", Sapz)
-    span = 10e-6 # x & y span for sapphire
+    print("SapzSpan:", SapzSpan)
 
     FDTDzMin = -0.5 * AlNzSpan -  wv
-    print("FDTDzMin:", FDTDzMin)
     FDTDzMax =  AlNzSpan * 0.5 +  wv
-    print("FDTDzMax:", FDTDzMax)
-    FDTDspan = 2 * wv
-    print("FDTDspan:", FDTDspan)
+    FDTDspan = 2.5 * wv
     AlNDFTz2 = 0.5 * AlNzSpan + 0.5 * wv
+
+    print("FDTDzMin:", FDTDzMin)
+    print("FDTDzMax:", FDTDzMax)
+    print("FDTDspan:", FDTDspan)
     print("AlNDFTz2:", AlNDFTz2)
 
     mesh = 0.1e-6  # only for testing - increase for final runs
@@ -87,8 +93,12 @@ def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40):
         ("mesh", (
                     ("dx", mesh),
                     ("dy", mesh),
-                    ("based on a structure", True),
-                    ("structure", "AlNfilm"))),
+                    ("x", x),
+                    ("y", y),
+                    ("z", z),
+                    ("x span", AlNxSpan),
+                    ("y span", AlNySpan),
+                    ("z span", AlNzSpan))),
 
         ("FDTD", (
                     ("x", x),
@@ -97,8 +107,8 @@ def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40):
                     ("y span", FDTDspan),
                     ("z min", FDTDzMin),
                     ("z max", FDTDzMax),
-                    ("x min bc", "bloch"),
-                    ("y min bc", "bloch"))),
+                    ("x min bc", "bloch"),  # switch to bloch later
+                    ("y min bc", "bloch"))), # switch to bloch later
 
         ("Sapphire", (
                     ("x", x),
@@ -140,7 +150,7 @@ def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40):
     fdtd.adddftmonitor()
     fdtd.set("name", "AlNDFT2")
 
-    fdtd.eval(f"addimportedsource; importdataset(E2);set(\"name\", \"source2\");set(\"x\", {x});set(\"y\", {y});set(\"z\", {z});set(\"injection axis\", \"z\");set(\"direction\", \"forward\");")
+    fdtd.eval(f"addimportedsource; importdataset(E2);set(\"name\", \"source2\");set(\"x\", {x});set(\"y\", {y});set(\"z\", {DFTz});set(\"injection axis\", \"z\");set(\"direction\", \"forward\");")
 
     configuration2 = (
         ("AlNDFT2", (
@@ -160,8 +170,9 @@ def runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz=0, theta=40):
 
     result = fdtd.getresult("AlNDFT2", "power")
 
-    return real(result)[0][0] # for raw transmission - BOp
+    return real(result)[0][0] / 3.7e8 # for raw transmission - BOp
 
     # return real(result)[0][0] / (3.7e8) # for actual transmission
-# 9.125e-07,9.125e-07,9.125e-07,0.0,40.0,0.16375098715786873,success
-# print(runSim1(9.125e-07, 9.125e-07, 9.125e-07, 0.0, 40.0))
+
+# 37,0.345,1.46,1.355,-0.144,25.5,2.0419825923541257,success
+print(runSim1(0.345e-6, 1.46e-6, 1.355e-6, -0.144e-6, 25.5))

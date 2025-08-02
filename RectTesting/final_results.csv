@@ -1,0 +1,697 @@
+Iteration 1/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.821μm, AlNySpan=0.821μm, AlNzSpan=0.821μm, DFTz=0.000μm, theta=40.0° 
+PlaneZ: -7.75625e-07
+Sapz: -1.140625e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.140625e-06
+FDTDzMax: 1.140625e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 7.75625e-07
+Mesh: 1e-07
+Power result: 0.06019868174801524 (standardized: 0.06019868174801524)
+
+
+Iteration 2/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.819μm, AlNySpan=1.313μm, AlNzSpan=0.762μm, DFTz=-0.119μm, theta=50.1° 
+PlaneZ: -7.458214160799979e-07
+Sapz: -1.110821416079998e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.110821416079998e-06
+FDTDzMax: 1.110821416079998e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 7.458214160799979e-07
+Mesh: 1e-07
+Power result: 0.05065123882313993 (standardized: 0.05065123882313993)
+
+
+Iteration 3/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.948μm, AlNySpan=0.571μm, AlNzSpan=1.400μm, DFTz=0.025μm, theta=32.8° 
+PlaneZ: -1.0650616716709917e-06
+Sapz: -1.4300616716709916e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4300616716709916e-06
+FDTDzMax: 1.4300616716709916e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0650616716709917e-06
+Mesh: 1e-07
+Power result: 0.08808300544783243 (standardized: 0.08808300544783243)
+
+
+Iteration 4/50
+----------------------------------------
+Skipping trial 3 due to DFTz constraint
+
+Iteration 5/50
+----------------------------------------
+Skipping trial 4 due to DFTz constraint
+
+Iteration 6/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.970μm, AlNySpan=0.345μm, AlNzSpan=1.460μm, DFTz=0.382μm, theta=44.6° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.028779248064096964 (standardized: 0.028779248064096964)
+
+
+Iteration 7/50
+----------------------------------------
+Testing parameters: AlNxSpan=1.161μm, AlNySpan=1.007μm, AlNzSpan=1.460μm, DFTz=-0.035μm, theta=20.7° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.08272769145013527 (standardized: 0.08272769145013527)
+
+
+Iteration 8/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.452μm, AlNySpan=0.182μm, AlNzSpan=1.460μm, DFTz=-0.078μm, theta=29.1° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.07299396113416806 (standardized: 0.07299396113416806)
+
+
+Iteration 9/50
+----------------------------------------
+Testing parameters: AlNxSpan=1.460μm, AlNySpan=0.274μm, AlNzSpan=1.460μm, DFTz=-0.027μm, theta=48.8° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.015314897113650933 (standardized: 0.015314897113650933)
+
+
+Iteration 10/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.834μm, AlNySpan=0.931μm, AlNzSpan=1.460μm, DFTz=-0.025μm, theta=25.6° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.22640132996618673 (standardized: 0.22640132996618673)
+
+
+Iteration 11/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.778μm, AlNySpan=1.006μm, AlNzSpan=1.460μm, DFTz=-0.111μm, theta=20.1° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.12297248701756525 (standardized: 0.12297248701756525)
+
+
+Iteration 12/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.669μm, AlNySpan=1.021μm, AlNzSpan=1.460μm, DFTz=0.056μm, theta=26.3° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.19059474790273478 (standardized: 0.19059474790273478)
+
+
+Iteration 13/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.895μm, AlNySpan=1.438μm, AlNzSpan=1.460μm, DFTz=-0.083μm, theta=26.0° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.3626530195144178 (standardized: 0.3626530195144178)
+
+
+Iteration 14/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.928μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.181μm, theta=28.3° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.26115269142990866 (standardized: 0.26115269142990866)
+
+
+Iteration 15/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.991μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.106μm, theta=25.2° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.09573921643415384 (standardized: 0.09573921643415384)
+
+
+Iteration 16/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.350μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.109μm, theta=28.5° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.4014190220178677 (standardized: 1.4014190220178677)
+
+
+Iteration 17/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.358μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=0.419μm, theta=31.8° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.28405113339887234 (standardized: 0.28405113339887234)
+
+
+Iteration 18/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.332μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.201μm, theta=27.7° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.2081763769196465 (standardized: 1.2081763769196465)
+
+
+Iteration 19/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.381μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.062μm, theta=39.8° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.10194986470868425 (standardized: 0.10194986470868425)
+
+
+Iteration 20/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.316μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.030μm, theta=27.6° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.2769500201750303 (standardized: 0.2769500201750303)
+
+
+Iteration 21/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.350μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.143μm, theta=28.4° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.3478068098228537 (standardized: 1.3478068098228537)
+
+
+Iteration 22/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.352μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.137μm, theta=25.6° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.6000833484784898 (standardized: 1.6000833484784898)
+
+
+Iteration 23/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.231μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.140μm, theta=22.8° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.1045862993624877 (standardized: 0.1045862993624877)
+
+
+Iteration 24/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.350μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.232μm, theta=22.0° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.0572513395485297 (standardized: 1.0572513395485297)
+
+
+Iteration 25/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.355μm, AlNySpan=1.460μm, AlNzSpan=1.332μm, DFTz=-0.103μm, theta=23.8° 
+PlaneZ: -1.0312236384757432e-06
+Sapz: -1.3962236384757433e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.3962236384757433e-06
+FDTDzMax: 1.3962236384757433e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0312236384757432e-06
+Mesh: 1e-07
+Power result: 1.4792551355258319 (standardized: 1.4792551355258319)
+
+
+Iteration 26/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.353μm, AlNySpan=1.141μm, AlNzSpan=1.347μm, DFTz=-0.110μm, theta=25.8° 
+PlaneZ: -1.0383933302572213e-06
+Sapz: -1.4033933302572212e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4033933302572212e-06
+FDTDzMax: 1.4033933302572212e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0383933302572213e-06
+Mesh: 1e-07
+Power result: 0.15474141013850076 (standardized: 0.15474141013850076)
+
+
+Iteration 27/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.352μm, AlNySpan=1.460μm, AlNzSpan=1.029μm, DFTz=-0.131μm, theta=26.0° 
+PlaneZ: -8.795645254314383e-07
+Sapz: -1.2445645254314382e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.2445645254314382e-06
+FDTDzMax: 1.2445645254314382e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 8.795645254314383e-07
+Mesh: 1e-07
+Power result: 0.6069266686405301 (standardized: 0.6069266686405301)
+
+
+Iteration 28/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.353μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=-0.107μm, theta=23.4° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 1.2290358846560354 (standardized: 1.2290358846560354)
+
+
+Iteration 29/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.350μm, AlNySpan=1.460μm, AlNzSpan=1.376μm, DFTz=-0.296μm, theta=26.0° 
+PlaneZ: -1.0531011114199425e-06
+Sapz: -1.4181011114199426e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4181011114199426e-06
+FDTDzMax: 1.4181011114199426e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0531011114199425e-06
+Mesh: 1e-07
+Power result: 1.0579482735569248 (standardized: 1.0579482735569248)
+
+
+Iteration 30/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.353μm, AlNySpan=1.460μm, AlNzSpan=1.370μm, DFTz=-0.133μm, theta=25.9° 
+PlaneZ: -1.0501751656551789e-06
+Sapz: -1.4151751656551787e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4151751656551787e-06
+FDTDzMax: 1.4151751656551787e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0501751656551789e-06
+Mesh: 1e-07
+Power result: 1.6901426682507337 (standardized: 1.6901426682507337)
+
+
+Iteration 31/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.368μm, AlNySpan=1.460μm, AlNzSpan=1.364μm, DFTz=-0.103μm, theta=26.2° 
+PlaneZ: -1.0468294704243532e-06
+Sapz: -1.4118294704243533e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4118294704243533e-06
+FDTDzMax: 1.4118294704243533e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0468294704243532e-06
+Mesh: 1e-07
+Power result: 1.1165307442806358 (standardized: 1.1165307442806358)
+
+
+Iteration 32/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.892μm, AlNySpan=1.137μm, AlNzSpan=1.460μm, DFTz=-0.157μm, theta=28.7° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.23620170984141095 (standardized: 0.23620170984141095)
+
+
+Iteration 33/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.365μm, AlNySpan=1.176μm, AlNzSpan=1.460μm, DFTz=0.276μm, theta=36.9° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.14612667502671256 (standardized: 0.14612667502671256)
+
+
+Iteration 34/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.898μm, AlNySpan=1.382μm, AlNzSpan=1.411μm, DFTz=0.081μm, theta=34.6° 
+PlaneZ: -1.0702506477508695e-06
+Sapz: -1.4352506477508696e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4352506477508696e-06
+FDTDzMax: 1.4352506477508696e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0702506477508695e-06
+Mesh: 1e-07
+Power result: 0.7393884359645121 (standardized: 0.7393884359645121)
+
+
+Iteration 35/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.874μm, AlNySpan=1.448μm, AlNzSpan=1.454μm, DFTz=-0.116μm, theta=35.8° 
+PlaneZ: -1.0919492472470828e-06
+Sapz: -1.456949247247083e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.456949247247083e-06
+FDTDzMax: 1.456949247247083e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0919492472470828e-06
+Mesh: 1e-07
+Power result: 0.22788606017415317 (standardized: 0.22788606017415317)
+
+
+Iteration 36/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.909μm, AlNySpan=1.343μm, AlNzSpan=1.115μm, DFTz=0.087μm, theta=30.6° 
+PlaneZ: -9.226343693918792e-07
+Sapz: -1.2876343693918792e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.2876343693918792e-06
+FDTDzMax: 1.2876343693918792e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 9.226343693918792e-07
+Mesh: 1e-07
+Power result: 0.27455485360600773 (standardized: 0.27455485360600773)
+
+
+Iteration 37/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.345μm, AlNySpan=1.460μm, AlNzSpan=1.355μm, DFTz=-0.144μm, theta=25.5° 
+PlaneZ: -1.0425580271332538e-06
+Sapz: -1.4075580271332537e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4075580271332537e-06
+FDTDzMax: 1.4075580271332537e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0425580271332538e-06
+Mesh: 1e-07
+Power result: 2.0419825923541257 (standardized: 2.0419825923541257)
+
+
+Iteration 38/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.934μm, AlNySpan=1.253μm, AlNzSpan=1.460μm, DFTz=0.032μm, theta=37.0° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.07769694850655944 (standardized: 0.07769694850655944)
+
+
+Iteration 39/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.340μm, AlNySpan=1.460μm, AlNzSpan=1.308μm, DFTz=-0.161μm, theta=20.0° 
+PlaneZ: -1.0191596068851021e-06
+Sapz: -1.384159606885102e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.384159606885102e-06
+FDTDzMax: 1.384159606885102e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0191596068851021e-06
+Mesh: 1e-07
+Power result: 0.6148242309862844 (standardized: 0.6148242309862844)
+
+
+Iteration 40/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.871μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=0.203μm, theta=30.9° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.31351582774845854 (standardized: 0.31351582774845854)
+
+
+Iteration 41/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.887μm, AlNySpan=1.460μm, AlNzSpan=1.233μm, DFTz=0.196μm, theta=38.3° 
+PlaneZ: -9.817168776101415e-07
+Sapz: -1.3467168776101414e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.3467168776101414e-06
+FDTDzMax: 1.3467168776101414e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 9.817168776101415e-07
+Mesh: 1e-07
+Power result: 0.8601297739329129 (standardized: 0.8601297739329129)
+
+
+Iteration 42/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.868μm, AlNySpan=1.256μm, AlNzSpan=1.295μm, DFTz=0.172μm, theta=37.2° 
+PlaneZ: -1.0123202575012812e-06
+Sapz: -1.3773202575012813e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.3773202575012813e-06
+FDTDzMax: 1.3773202575012813e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0123202575012812e-06
+Mesh: 1e-07
+Power result: 0.3140714920264205 (standardized: 0.3140714920264205)
+
+
+Iteration 43/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.338μm, AlNySpan=1.460μm, AlNzSpan=1.321μm, DFTz=-0.153μm, theta=25.2° 
+PlaneZ: -1.025733572267164e-06
+Sapz: -1.3907335722671638e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.3907335722671638e-06
+FDTDzMax: 1.3907335722671638e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.025733572267164e-06
+Mesh: 1e-07
+Power result: 1.3326931043931602 (standardized: 1.3326931043931602)
+
+
+Iteration 44/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.911μm, AlNySpan=1.460μm, AlNzSpan=1.460μm, DFTz=0.296μm, theta=38.2° 
+PlaneZ: -1.095e-06
+Sapz: -1.46e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.46e-06
+FDTDzMax: 1.46e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.095e-06
+Mesh: 1e-07
+Power result: 0.24325379767937746 (standardized: 0.24325379767937746)
+
+
+Iteration 45/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.348μm, AlNySpan=1.460μm, AlNzSpan=1.358μm, DFTz=-0.153μm, theta=26.4° 
+PlaneZ: -1.0438483390631245e-06
+Sapz: -1.4088483390631244e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4088483390631244e-06
+FDTDzMax: 1.4088483390631244e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0438483390631245e-06
+Mesh: 1e-07
+Power result: 1.7986814840773808 (standardized: 1.7986814840773808)
+
+
+Iteration 46/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.903μm, AlNySpan=1.460μm, AlNzSpan=1.136μm, DFTz=0.021μm, theta=41.3° 
+PlaneZ: -9.330168187476537e-07
+Sapz: -1.2980168187476537e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.2980168187476537e-06
+FDTDzMax: 1.2980168187476537e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 9.330168187476537e-07
+Mesh: 1e-07
+Power result: 0.7460636952290024 (standardized: 0.7460636952290024)
+
+
+Iteration 47/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.880μm, AlNySpan=1.460μm, AlNzSpan=1.401μm, DFTz=0.101μm, theta=45.1° 
+PlaneZ: -1.0655511219771457e-06
+Sapz: -1.4305511219771456e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4305511219771456e-06
+FDTDzMax: 1.4305511219771456e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0655511219771457e-06
+Mesh: 1e-07
+Power result: 0.11126547999379072 (standardized: 0.11126547999379072)
+
+
+Iteration 48/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.896μm, AlNySpan=1.460μm, AlNzSpan=0.878μm, DFTz=0.207μm, theta=40.2° 
+PlaneZ: -8.042327049072319e-07
+Sapz: -1.1692327049072318e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.1692327049072318e-06
+FDTDzMax: 1.1692327049072318e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 8.042327049072319e-07
+Mesh: 1e-07
+Power result: 0.167829317562274 (standardized: 0.167829317562274)
+
+
+Iteration 49/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.348μm, AlNySpan=1.409μm, AlNzSpan=1.367μm, DFTz=-0.147μm, theta=26.1° 
+PlaneZ: -1.0485359841564174e-06
+Sapz: -1.4135359841564175e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.4135359841564175e-06
+FDTDzMax: 1.4135359841564175e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0485359841564174e-06
+Mesh: 1e-07
+Power result: 1.3746065881001068 (standardized: 1.3746065881001068)
+
+
+Iteration 50/50
+----------------------------------------
+Testing parameters: AlNxSpan=0.347μm, AlNySpan=1.460μm, AlNzSpan=1.339μm, DFTz=-0.104μm, theta=26.6° 
+PlaneZ: -1.0344161556021151e-06
+Sapz: -1.3994161556021152e-06
+SapzSpan: 1.46e-06
+FDTDzMin: -1.3994161556021152e-06
+FDTDzMax: 1.3994161556021152e-06
+FDTDspan: 1.8249999999999999e-06
+AlNDFTz2: 1.0344161556021151e-06
+Mesh: 1e-07
+Power result: 1.7254458594329756 (standardized: 1.7254458594329756)
+
+============================================================
+Optimization Complete!
+C:\Users\manne\OneDrive\RMP\.venv\Lib\site-packages\ax\utils\stats\model_fit_stats.py:223: RuntimeWarning: divide by zero encountered in divide
+  return float(np.mean(1.96 * 2 * se_pred / np.abs(y_obs)))
+C:\Users\manne\OneDrive\RMP\.venv\Lib\site-packages\ax\utils\stats\model_fit_stats.py:257: RuntimeWarning: divide by zero encountered in scalar divide
+  return float((np.max(y_obs) - min_y_obs) / min_y_obs)
+
+Final Best Objective (Power): 1.696 (standardized) and 1.695782e+00 (original)
+Final Best Parameters:
+
+Converted to simulation units:
+  AlNxSpan: 3.483384e-07 m
+  AlNySpan: 1.460000e-06 m
+  AlNzSpan: 1.357697e-06 m
+  DFTz: -1.525108e-07 m
+  theta: 26.388°
+
+  

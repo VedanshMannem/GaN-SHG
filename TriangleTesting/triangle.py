@@ -34,17 +34,26 @@ def runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta=40):
     z = 0
 
     PlaneZ = -0.5 * AlNzSpan - 0.5 * wv 
+    print("PlaneZ:", PlaneZ)
     
     SapzSpan = 2e-6 
     Sapz = -0.5 * (AlNzSpan + SapzSpan)
-    span = 10e-6 # x & y span for sapphire
+    span = 3e-6 # x & y span for sapphire
+    print("SapzSpan:", SapzSpan)
+    print("Sapz:", Sapz)
+    print("Span:", span)
 
     FDTDzMin = -0.5 * AlNzSpan - wv 
     FDTDzMax =  AlNzSpan * 0.5 + wv
-    FDTDspan = 4.5 * wv 
+    FDTDspan = 3 * wv 
     AlNDFTz2 = 0.5 * AlNzSpan + 0.5 * wv
+    print("FDTDzMin:", FDTDzMin)
+    print("FDTDzMax:", FDTDzMax)
+    print("FDTDspan:", FDTDspan)
+    print("AlNDFTz2:", AlNDFTz2)
 
     mesh = 0.1e-6  # only for testing - increase for final runs
+    print("Mesh:", mesh)
 
     fdtd = lumapi.FDTD(hide = False)
 
@@ -66,6 +75,9 @@ def runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta=40):
 
     fdtd.adddftmonitor()
     fdtd.set("name", "AlNDFT") # AlNDFT in Lumerical
+
+    meshxspan = np.max(np.abs(V[:,0])) * 2
+    meshyspan = np.max(np.abs(V[:,1])) * 2
 
     configuration = (
         ("PlaneWave", (
@@ -89,8 +101,12 @@ def runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta=40):
         ("mesh", (
                     ("dx", mesh),
                     ("dy", mesh),
-                    ("based on a structure", True),
-                    ("structure", "AlNfilm"))),
+                    ("x", x),
+                    ("y", y),
+                    ("z", z),
+                    ("x span", meshxspan),
+                    ("y span", meshyspan),
+                    ("z span", AlNzSpan))),
 
         ("FDTD", (
                     ("x", x),
@@ -100,8 +116,8 @@ def runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta=40):
                     ("y span", FDTDspan),
                     ("z min", FDTDzMin),
                     ("z max", FDTDzMax),
-                    ("x min bc", "bloch"),
-                    ("y min bc", "bloch"))),
+                    ("x min bc", "bloch"), # make bloch later
+                    ("y min bc", "bloch"))), # make bloch later
 
         ("Sapphire", (
                     ("x", x),
@@ -163,4 +179,6 @@ def runSim1(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta=40):
 
     result = fdtd.getresult("AlNDFTair", "power")
 
-    return real(result)[0][0] 
+    return real(result)[0][0] / 3.7e8
+# 40,-7.3e-07,2.632116472180357e-07,-1.350505637274167e-07,7.3e-07,-1.0467059205885162e-07,-4.300044395634675e-07,1.46e-06,-2.2357263480853136e-09,30.0,1.4067585494813142,success
+print(runSim1(-7.3e-07, 2.632116472180357e-07, -1.350505637274167e-07, 7.3e-07, -1.0467059205885162e-07, -4.300044395634675e-07, 1.46e-06, -2.2357263480853136e-09, 30.0))

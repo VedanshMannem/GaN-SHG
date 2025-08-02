@@ -14,6 +14,7 @@ from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 from collections import deque
 from circle import runSim1
 import traceback
+
 wv = 0.73e-6  # wv
 num_iterations = 50
 
@@ -21,33 +22,30 @@ iteration_counter = 0
 
 power_history = deque(maxlen=100)
 
-def objective_function(x, y, z, radius, AlNzSpan, DFTz, theta):
+def objective_function(radius, AlNzSpan, DFTz, theta):
 
     global iteration_counter
     iteration_counter += 1
     global power_history
     
     try:
-        x = float(x) * 1e-6
-        y = float(y) * 1e-6
-        z = float(z) * 1e-6
         radius = float(radius) * 1e-6
         AlNzSpan = float(AlNzSpan) * 1e-6
         DFTz = float(DFTz) * 1e-6
         theta = float(theta)
 
-        print(f"Testing parameters: x={x*1e6:.3f}μm, y={y*1e6:.3f}μm, z={z*1e6:.3f}μm, radius={radius*1e6:.3f}μm, AlNzSpan={AlNzSpan*1e6:.3f}μm, DFTz={DFTz*1e6:.3f}μm, theta={theta:.1f}° ")
+        print(f"Testing parameters: radius={radius*1e6:.3f}μm, AlNzSpan={AlNzSpan*1e6:.3f}μm, DFTz={DFTz*1e6:.3f}μm, theta={theta:.1f}° ")
 
         constraint_satisfied = abs(DFTz) <= 0.5 * AlNzSpan
         print(f"  Constraint check: abs({DFTz:.3e}) <= 0.5*{AlNzSpan:.3e} = {constraint_satisfied}")
 
-        result = float(runSim1(x, y, z, radius, AlNzSpan, DFTz, theta))
+        result = float(runSim1(radius, AlNzSpan, DFTz, theta))
 
         standardized_power = result 
 
         print(f"Power result: {result} (standardized: {standardized_power})")
         
-        log_to_csv(iteration_counter, x, y, z, radius, AlNzSpan, DFTz, theta, result, "success")
+        log_to_csv(iteration_counter, radius, AlNzSpan, DFTz, theta, result, "success")
 
         return standardized_power
     
@@ -55,15 +53,15 @@ def objective_function(x, y, z, radius, AlNzSpan, DFTz, theta):
         print(f"Error in simulation: {e}")
         error_msg = str(e)
 
-        log_to_csv(iteration_counter, x, y, z, radius, AlNzSpan, DFTz, theta, 0.0, f"error: {error_msg}")
+        log_to_csv(iteration_counter, radius, AlNzSpan, DFTz, theta, 0.0, f"error: {error_msg}")
 
         return 0.0 
 
-def log_to_csv(iteration, x, y, z, radius, AlNzSpan, DFTz, theta, power, status):
+def log_to_csv(iteration, radius, AlNzSpan, DFTz, theta, power, status):
     try:
-        with open("CircleTesting/fixed_BOp.csv", "a", newline='') as file:
+        with open("fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([iteration, x, y, z, radius, AlNzSpan, DFTz, theta, power, status])
+            writer.writerow([iteration, radius, AlNzSpan, DFTz, theta, power, status])
         print(f"Logged iteration {iteration} to CSV")
     except Exception as e:
         print(f"Error logging to CSV: {e}")
@@ -72,9 +70,9 @@ def log_to_csv(iteration, x, y, z, radius, AlNzSpan, DFTz, theta, power, status)
 
 def run_bayesian_optimization():
     try:
-        with open("CircleTesting/fixed_BOp.csv", "a", newline='') as file:
+        with open("fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
-            writer.writerow(["iteration", "x_um", "y_um", "z_um", "radius_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
+            writer.writerow(["iteration", "radius_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
         print("Initialized fixed_BOp.csv for logging")
     except Exception as e:
         print(f"Error initializing CSV file: {e}")
@@ -89,23 +87,8 @@ def run_bayesian_optimization():
     client.configure_experiment(
         parameters=[
             RangeParameterConfig(
-                name="x",
-                bounds=(-0.5 * wv * 1e6, 0.5 * wv * 1e6),  
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
-                name="y",
-                bounds=(-0.5 * wv * 1e6, 0.5 * wv * 1e6),  
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
-                name="z",
-                bounds=(-0.5 * wv * 1e6, 0.5 * wv * 1e6),
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
                 name="radius",
-                bounds=(0.25 * wv * 1e6,  2 * wv * 1e6),  
+                bounds=(0.1 * wv * 1e6, wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
@@ -115,7 +98,7 @@ def run_bayesian_optimization():
             ),
             RangeParameterConfig(
                 name="DFTz",
-                bounds=(-1 * wv * 1e6, 1 * wv * 1e6),  
+                bounds=(-1 * wv * 1e6, wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
@@ -131,7 +114,7 @@ def run_bayesian_optimization():
     print("Starting Bayesian Optimization...")
     print("=" * 60)
     
-    num_iterations = 30  
+    num_iterations = 30
     
     for i in range(num_iterations):
         print(f"\nIteration {i+1}/{num_iterations}")
@@ -140,14 +123,11 @@ def run_bayesian_optimization():
         trials = client.get_next_trials(max_trials=1)
             
         for trial_index, parameters in trials.items():
-            if(abs(parameters["DFTz"]) >  0.5 * parameters["AlNzSpan"]):
-                print("Skipping trial due to constraint violation: abs(DFTz) > 0.5 * AlNzSpan")
+            if(abs(parameters["DFTz"]) >=  0.5 * parameters["AlNzSpan"]):
+                print("Skipping trial due to constraint violation: abs(DFTz) >= 0.5 * AlNzSpan")
                 continue
 
             result = objective_function(
-                parameters["x"],
-                parameters["y"],
-                parameters["z"],
                 parameters["radius"],
                 parameters["AlNzSpan"],
                 parameters["DFTz"],
@@ -167,18 +147,12 @@ def run_bayesian_optimization():
     print(f"\nFinal Best Objective (Power): {prediction['power']:.3f} (standardized) and {(prediction['power'] / norm):.6e} (original)")
     print("Final Best Parameters:")
 
-    final_x = float(best_parameters["x"]) * 1e-6
-    final_y = float(best_parameters["y"]) * 1e-6
-    final_z = float(best_parameters["z"]) * 1e-6
     final_radius = float(best_parameters["radius"]) * 1e-6
     final_AlNzSpan = float(best_parameters["AlNzSpan"]) * 1e-6
     final_DFTz = float(best_parameters["DFTz"]) * 1e-6
     final_theta = float(best_parameters["theta"])
 
     print(f"\nConverted to simulation units:")
-    print(f"  x: {final_x:.6e} m")
-    print(f"  y: {final_y:.6e} m")
-    print(f"  z: {final_z:.6e} m")
     print(f"  radius: {final_radius:.6e} m")
     print(f"  AlNzSpan: {final_AlNzSpan:.6e} m") 
     print(f"  DFTz: {final_DFTz:.6e} m")

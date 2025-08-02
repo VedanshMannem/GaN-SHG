@@ -48,7 +48,6 @@ def objective_function(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta):
 
         print(f"Power result: {result} (standardized: {standardized_power})")
         
-        
         log_to_csv(iteration_counter, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, result, "success")
 
         return standardized_power
@@ -56,14 +55,12 @@ def objective_function(x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta):
     except Exception as e:
         print(f"Error in simulation: {e}")
         error_msg = str(e)
-
         log_to_csv(iteration_counter, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, 0.0, f"error: {error_msg}")
-
         return 0.0 
 
 def log_to_csv(iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, status):
     try:
-        with open("TriangleTesting/fixed_BOp.csv", "a", newline='') as file:
+        with open("fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow([iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, status])
         print(f"Logged iteration {iteration} to CSV")
@@ -74,7 +71,7 @@ def log_to_csv(iteration, x1, x2, x3, y1, y2, y3, AlNzSpan, DFTz, theta, power, 
 
 def run_bayesian_optimization():
     try:
-        with open("TriangleTesting/fixed_BOp.csv", "a", newline='') as file:
+        with open("fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
             writer.writerow(["iteration", "x1_um", "x2_um", "x3_um", "y1_um", "y2_um", "y3_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
         print("Initialized fixed_BOp.csv for logging")
@@ -144,11 +141,11 @@ def run_bayesian_optimization():
     print("Starting Bayesian Optimization...")
     print("=" * 60)
     
-    num_iterations = 10
-    
+    num_iterations = 50
+     
     for i in range(num_iterations):
         print(f"\nIteration {i+1}/{num_iterations}")
-        print("-" * 40)
+        print("-" * 40) 
         
         # Keep trying until we get a valid trial
         trial_successful = False

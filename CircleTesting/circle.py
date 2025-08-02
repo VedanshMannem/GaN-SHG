@@ -16,8 +16,12 @@ c = 299792458
 wv = 0.73e-6 # wavelength
 chi2 = 1.26e-10 
 
-def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40): 
+def runSim1(radius, AlNzSpan, DFTz, theta=40): 
     
+    x= 0
+    y= 0
+    z= 0
+
     if(abs(DFTz) > 0.5 * AlNzSpan):
         return 0.0  
 
@@ -28,12 +32,12 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
     print("SapzSpan:", SapzSpan)
     Sapz = z - 0.5 * (AlNzSpan + SapzSpan)
     print("Sapz:", Sapz)
-    span = 10e-6 # x & y span for sapphire
+    span = 3 * wv  # x & y span for sapphire
     print("Span:", span)
 
-    FDTDzMin = -0.5 * AlNzSpan - 2 * wv 
+    FDTDzMin = -0.5 * AlNzSpan - wv 
     print("FDTDzMin:", FDTDzMin)
-    FDTDzMax =  AlNzSpan * 0.5 + 2 * wv
+    FDTDzMax = AlNzSpan * 0.5 + wv
     print("FDTDzMax:", FDTDzMax)
     FDTDspan = 3 * wv
     print("FDTDspan:", FDTDspan)
@@ -43,7 +47,7 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
     mesh = 0.1e-6  # only for testing - increase for final runs
     print("Mesh:", mesh)
 
-    fdtd = lumapi.FDTD(hide = True)
+    fdtd = lumapi.FDTD(hide = False)
 
     fdtd.eval("q=[2.1297;2.1297;2.1712];setmaterial(addmaterial(\"(n,k) Material\"), \"name\", \"AlN\");setmaterial(\"AlN\", \"Anisotropy\", 1);setmaterial(\"AlN\", \"Refractive Index\", q);")
 
@@ -84,13 +88,12 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
                     ("radius", radius))),
 
         ("mesh", (
-                    ("dx", mesh),
-                    ("dy", mesh),
                     ("x", x),
                     ("y", y),
                     ("z", z),
+                    ("dx", mesh),
+                    ("dy", mesh),
                     ("z span", AlNzSpan),
-                    ("structure", "AlNfilm"),
                     ("x span", radius * 2),
                     ("y span", radius * 2))),
 
@@ -101,8 +104,8 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
                     ("y span", FDTDspan),
                     ("z min", FDTDzMin),
                     ("z max", FDTDzMax),
-                    ("x min bc", "bloch"),
-                    ("y min bc", "bloch"))),
+                    ("x min bc", "periodic"), # switch to bloch later
+                    ("y min bc", "periodic"))), # switch to bloch later
 
         ("Sapphire", (
                     ("x", x),
@@ -144,7 +147,7 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
     fdtd.adddftmonitor()
     fdtd.set("name", "AlNDFT2")
 
-    fdtd.eval(f"addimportedsource; importdataset(E2);set(\"name\", \"source2\");set(\"x\", {x});set(\"y\", {y});set(\"z\", {z});set(\"injection axis\", \"z\");set(\"direction\", \"forward\");")
+    fdtd.eval(f"addimportedsource; importdataset(E2);set(\"name\", \"source2\");set(\"x\", {x});set(\"y\", {y});set(\"z\", {DFTz});set(\"injection axis\", \"z\");set(\"direction\", \"forward\");")
 
     configuration2 = (
         ("AlNDFT2", (
@@ -164,4 +167,7 @@ def runSim1(x, y, z, radius, AlNzSpan, DFTz, theta=40):
 
     result = fdtd.getresult("AlNDFT2", "power")
 
-    return real(result)[0][0]
+    return real(result)[0][0] / 3.7e8
+
+# 23,3.511491079360874e-07,7.96450325370761e-07,-1.0860613939882807e-07,35.75161823320473,0.9990963781418996,success
+print(runSim1(3.511491079360874e-07, 7.96450325370761e-07, -1.0860613939882807e-07, 35.75161823320473))

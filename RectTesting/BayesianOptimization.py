@@ -20,31 +20,28 @@ iteration_counter = 0
 
 power_history = deque(maxlen=100)
 
-def objective_function(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta):
+def objective_function(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta):
 
     global iteration_counter
     iteration_counter += 1
     global power_history
     
     try:
-        x = float(x) * 1e-6
-        y = float(y) * 1e-6
-        z = float(z) * 1e-6
         AlNxSpan = float(AlNxSpan) * 1e-6
         AlNySpan = float(AlNySpan) * 1e-6
         AlNzSpan = float(AlNzSpan) * 1e-6
         DFTz = float(DFTz) * 1e-6
         theta = float(theta)
 
-        print(f"Testing parameters: x={x*1e6:.3f}μm, y={y*1e6:.3f}μm, z={z*1e6:.3f}μm, AlNxSpan={AlNxSpan*1e6:.3f}μm, AlNySpan={AlNySpan*1e6:.3f}μm, AlNzSpan={AlNzSpan*1e6:.3f}μm, DFTz={DFTz*1e6:.3f}μm, theta={theta:.1f}° ")
+        print(f"Testing parameters: AlNxSpan={AlNxSpan*1e6:.3f}μm, AlNySpan={AlNySpan*1e6:.3f}μm, AlNzSpan={AlNzSpan*1e6:.3f}μm, DFTz={DFTz*1e6:.3f}μm, theta={theta:.1f}° ")
 
-        result = float(runSim1(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta))
+        result = float(runSim1(AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta))
 
         standardized_power = result 
 
         print(f"Power result: {result} (standardized: {standardized_power})")
-    
-        log_to_csv(iteration_counter, x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, result, "success")
+
+        log_to_csv(iteration_counter, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, result, "success")
 
         return standardized_power
     
@@ -52,15 +49,15 @@ def objective_function(x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta):
         print(f"Error in simulation: {e}")
         error_msg = str(e)
 
-        log_to_csv(iteration_counter, x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, 0.0, f"error: {error_msg}")
+        log_to_csv(iteration_counter, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, 0.0, f"error: {error_msg}")
 
         return 0.0 
 
-def log_to_csv(iteration, x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, power, status):
+def log_to_csv(iteration, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, power, status):
     try:
         with open("RectTesting/fixed_BOp.csv", "a", newline='') as file:
             writer = csv.writer(file)
-            writer.writerow([iteration, x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, power, status])
+            writer.writerow([iteration, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, power, status])
         print(f"Logged iteration {iteration} to CSV")
     except Exception as e:
         print(f"Error logging to CSV: {e}")
@@ -70,19 +67,19 @@ def log_to_csv(iteration, x, y, z, AlNxSpan, AlNySpan, AlNzSpan, DFTz, theta, po
 def run_bayesian_optimization():
     
     import os
-    if not os.path.exists("RectTesting/fixed_BOp.csv"):
+    if not os.path.exists("fixed_BOp.csv"):
         try:
-            with open("RectTesting/fixed_BOp.csv", "a", newline='') as file:
+            with open("fixed_BOp.csv", "a", newline='') as file:
                 writer = csv.writer(file)
-                writer.writerow(["iteration", "x", "y", "z", "AlNxSpan_um", "AlNySpan_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
-            print("Initialized RectTesting/fixed_BOp.csv for logging")
+                writer.writerow(["iteration", "AlNxSpan_um", "AlNySpan_um", "AlNzSpan_um", "DFTz_um", "theta_deg", "power", "status"])
+            print("Initialized fixed_BOp.csv for logging")
         except Exception as e:
             print(f"Error initializing CSV file: {e}")
             import traceback
             traceback.print_exc()
             return None, None
     else:
-        print("Using existing RectTesting/fixed_BOp.csv file")
+        print("Using existing fixed_BOp.csv file")
 
     global iteration_counter
     iteration_counter = 0
@@ -92,38 +89,23 @@ def run_bayesian_optimization():
     client.configure_experiment(
         parameters=[
             RangeParameterConfig(
-                name="x",
-                bounds=(-0.25, 0.25),
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
-                name="y",
-                bounds=(-0.25, 0.25),
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
-                name="z",
-                bounds=(-0.25, 0.25),
-                parameter_type="float"
-            ),
-            RangeParameterConfig(
                 name="AlNxSpan",
-                bounds=(0.5 * wv * 1e6,  1 * wv * 1e6),  
+                bounds=(0.25 * wv * 1e6,  2 * wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
                 name="AlNySpan",
-                bounds=(0.5 * wv * 1e6,  1 * wv * 1e6), 
+                bounds=(0.25 * wv * 1e6,  2 * wv * 1e6), 
                 parameter_type="float"
             ),
             RangeParameterConfig(
                 name="AlNzSpan", 
-                bounds=(0.5 * wv * 1e6, 1.0 * wv * 1e6),  
+                bounds=(0.25 * wv * 1e6, 2 * wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
                 name="DFTz",
-                bounds=(-0.5 * wv * 1e6, 0.5 * wv * 1e6),  
+                bounds=(-wv * 1e6, wv * 1e6),  
                 parameter_type="float"
             ),
             RangeParameterConfig(
@@ -156,9 +138,6 @@ def run_bayesian_optimization():
                 continue
 
             result = objective_function(
-                parameters["x"],
-                parameters["y"],
-                parameters["z"],
                 parameters["AlNxSpan"],
                 parameters["AlNySpan"],
                 parameters["AlNzSpan"],
@@ -187,14 +166,8 @@ def run_bayesian_optimization():
     final_AlNzSpan = float(best_parameters["AlNzSpan"]) * 1e-6
     final_DFTz = float(best_parameters["DFTz"]) * 1e-6
     final_theta = float(best_parameters["theta"])
-    final_AlNz = float(best_parameters["z"]) * 1e-6
-    final_AlNx = float(best_parameters["x"]) * 1e-6
-    final_AlNy = float(best_parameters["y"]) * 1e-6
 
     print(f"\nConverted to simulation units:")
-    print(f"  x: {final_AlNx:.6e} m")
-    print(f"  y: {final_AlNy:.6e} m")
-    print(f"  z: {final_AlNz:.6e} m")
     print(f"  AlNxSpan: {final_AlNxSpan:.6e} m")
     print(f"  AlNySpan: {final_AlNySpan:.6e} m")
     print(f"  AlNzSpan: {final_AlNzSpan:.6e} m")

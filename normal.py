@@ -14,43 +14,44 @@ from ax.api.configs import ChoiceParameterConfig, RangeParameterConfig
 
 # Optimize for power at the 2nd monitor not T
 
+wv = 0.730e-6  # wavelength
 chi1 = 5.3458
 theta = 40 # angle of plane wave
 c = 299792458
-chi2 = 1.26 * 10 ** -12 # quartz chi2
+chi2 = 1.26e-10 # quartz chi2
 
 GaNx = 0
 GaNy = 0
 GaNz = 0
 
-span = 1.064e-6
-GaNzSpan =  1.064e-6
+span = 2 * wv
+GaNzSpan =  wv
 
-PlaneZ = GaNz - 0.5 * GaNzSpan - 1.064e-6 # record
+PlaneZ = GaNz - 0.5 * GaNzSpan - wv # record
 PlaneX = 0
 PlaneY = 0
 
 Sapx = 0
 Sapy = 0
-SapSpan = 2.128e-6 # record
+SapSpan = 2 * wv # record
 Sapz = -0.5 * (GaNzSpan + SapSpan)
 
 FDTDx = 0
 FDTDy = 0
-FDTDzMin = Sapz - 1.064e-6
-FDTDzMax = GaNz + GaNzSpan * 0.5 + 1.064e-6
-FDTDspan =  span + 1.064e-6 # x & y span
+FDTDzMin = Sapz - wv
+FDTDzMax = GaNz + GaNzSpan * 0.5 + wv
+FDTDspan =  span # x & y span
 
 mesh = 0.085e-6  
 
 # Center of the GaN
 GaNDFTx = 0
 GaNDFTy = 0
-GaNDFTz = 0 
+GaNDFTz = 0
 
 GaNDFTx2 = 0
 GaNDFTy2 = 0
-GaNDFTz2 = GaNz + 0.5 * GaNzSpan + 1.064e-6
+GaNDFTz2 = GaNz + 0.5 * GaNzSpan + wv
 
 def runSim1():
 
@@ -88,8 +89,8 @@ def runSim1():
                     ("y span", FDTDspan),
                     ("angle theta", theta),
                     ("amplitude", 3.7e8),
-                    ("wavelength start", 1.064e-6),
-                    ("wavelength stop", 1.064e-6))),
+                    ("wavelength start", 0.730e-6),
+                    ("wavelength stop", 0.730e-6))),
 
         ("GaNfilm", (
                     ("x",GaNx),
@@ -147,7 +148,7 @@ def runSim1():
     fdtd.eval("E2 = rectilineardataset(\"EM Fields\", getresult(\"GaNDFT\", \"x\"), getresult(\"GaNDFT\", \"y\"), getresult(\"GaNDFT\", \"z\"));")
     fdtd.eval("chi1 = 5.3458;")
     fdtd.eval(f"Ex= getresult(\"GaNDFT\", \"Ex\");Ey= getresult(\"GaNDFT\", \"Ey\");Ez= getresult(\"GaNDFT\", \"Ez\");")
-    fdtd.eval(f"E2x = (2 * 11.33 * {chi2} * Ez * Ex) / chi1; E2y = (2 * 11.33 * {chi2} * Ez * Ey) / chi1; E2z = (11.33 * {chi2} * (Ex ^ 2 + Ey ^ 2) - 22.66 * {chi2} * Ez ^ 2) / chi1;")
+    fdtd.eval(f"E2x = (2 * {chi2} * Ez * Ex) / chi1; E2y = (2 * {chi2} * Ez * Ey) / chi1; E2z = ({chi2} * (Ex ^ 2 + Ey ^ 2) - {chi2} * Ez ^ 2) / chi1;")
     fdtd.eval("E2.addparameter(\"lambda\", 299792458/getresult(\"GaNDFT\", \"f\"), \"f\", getresult(\"GaNDFT\", \"f\"));")
     fdtd.eval("E2.addattribute(\"E\", E2x, E2y, E2z);")
     
@@ -178,8 +179,8 @@ def runSim1():
 
     result = fdtd.getresult("GaNDFT2", "power")
 
-    return real(result)[0][0]
+    return real(result)[0][0] 
 
 power = runSim1()
-print(f"Parameters used: \n span: {span} \n GaNzSpan: {GaNzSpan} \n mesh: {mesh} \n Sapphire: {SapSpan} \n everything else: 1.064e-6")
+print(f"Parameters used: \n span: {span} \n GaNzSpan: {GaNzSpan} \n mesh: {mesh} \n Sapphire: {SapSpan} \n everything else: wv")
 print("Power at 2nd monitor:", power)
