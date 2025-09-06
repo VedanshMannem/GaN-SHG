@@ -3,35 +3,35 @@ Ansys Lumerical 2025 R1 FDTD Solver Version 8.33.3999 (Windows 64bit)
  expires (month/day/year): 11/17/2025
 using config file: Ansys Licensing set with ANSYSLMD_LICENSE_FILE
 license host: 1055@license.cnsi.ucsb.edu
-current time: Tue Jul 29 20:38:17 2025
+current time: Sat Sep 6 01:05:06 2025
 Running on host: computer
-host available memory (GiB) 8.085
+host available memory (GiB) 10.548
 
 All processes are communicating and ready to proceed to simulation...
-Running fsp file: C:\Program Files\Lumerical\v251\bin\fdtd-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFek5nbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ210cFRXVk5jVlZPT1d4WlIwcG1jblZ1ZDJwTGVsUkNNV05aZUhWbGIzRmpjVk4xVm5veGVVUmlZbUpPYVhselJuSkxkV3Q2WjFablVqVjVZbTlxWVdWRmRUTm1iMUpqYVdWdGVGODBWbTFPY1c1ZlVVVXdjek5OWDJ3dFpISlJRMWgxWlhvM1VIbEtXbWswTUcweFZEZDVja0UzVUVSbGRWSTNWVFJzWTFORFdGcFZabVJSV1RCMlNuZHFSVVp3TUU0NGNIVjRjVWRWUmtGQ1ZUQk1iSGR6ZUVWbFZYcERZMjVETjJrMGJFZGpTRzlyTWs5cGRrRkNORnBOZERjMk0yOHlkM0o2WTJGNk1rWkVhVFJVTUVaRlpVVlZNakJ2YVRkaGRXZDVhVmxCVTNKMGJGTk9jSHBJTURacU1YTnZZbDh6Y3pKdE9VdEZZM1kyY1RkdlVGbGxjREJHTXpjNGF6aHBaM1JuYjBGNGNuZzVVSEJXTFRWbmJtRmxXbXB6ZDJ0VGJrZzRVbU5LVlVJeGRHazBUVjlPVUY4eVJuVk9ha1pEZGpCSmVVOUhkSFIyUWtGVVdubG1WSGh6WDBRd1dXVkxiMlpFUVdwcFRURXlOVVZETVRoRk9EVnJiazUxWmtOZmN3bzhMMDFUUno0SzwvREFUQT48L0FOU1lTX0xJQ0VOU0lOR19DT05URVhUX0RBVEE+CkFOU1lTX0xJQ0VOU0lOR19XT1JLRkxPV19TRVNTSU9OPTxEQVRBPjxJRD5jb21wdXRlcl9tYW5uZV8yNTE8L0lEPjwvREFUQT4K C:/Users/manne/OneDrive/RMP/circle-test2.fsp
-Estimate of memory required: 0.096 GiB
+Running fsp file: C:\Program Files\Lumerical\v251\bin\fdtd-engine-msmpi.exe -t 1 -remote -shared-solve-license QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT08QU5TWVNfTElDRU5TSU5HX0NPTlRFWFRfREFUQT48REFUQT5QRTlMUlZsZlUwbGFSVDRLTVRJNENqd3ZUMHRGV1Y5VFNWcEZQZ284UlU1RFgxTkpXa1UtQ2pFek5nbzhMMFZPUTE5VFNWcEZQZ284U1ZaZlUwbGFSVDRLT0FvOEwwbFdYMU5KV2tVLUNqeE5VMGRmVTBsYVJUNEtNVE01Q2p3dlRWTkhYMU5KV2tVLUNqeE5VMGMtQ2xaR1ZFUTRkWEZGTkhwUVMwTjNkR2QwUjBwSk5VRnlUM0JsUVVoNmN6ZFVNa1pXWDJ4ZlJHSk5MV1EzYzI1cWVFWm9NVTVCUVhGdk5HUXhkV2hJWjJ3dGFXczJOa3g1VkdWa1JEaDViM2cwUjI1TWRrRlFWRWRMZGtSeWQxZFlZMlZEZW1SUmFYRnNNRTFUUXpWSGFFZENjRGxIWTB4eWEwWk9hV1ptWkdWUmFsTkVVRXRqU1ZjMWJWZDFlVEZLWDFKaVZFdGlNR3RsVW5CVFdVUTVkMnB2VlZVMmEyOXNVMXBhZW5wTlIwSnJVRmRWTjFGM2JuWmFlamh1UWtOQlluVk5YMkpOWkhnMVVIaFhTMlV0ZGxKc1NYWjZjemhGZURkNU9YSjJWazlWYzFoMmFtSm1NWFJRUlVWQ0xYaFZOVzV1ZFdKaUxWOVlOMFJDVG5sSVFrdDFORTFzVVZGaFIwODJZV1IzY1RSUVZGZEZOME56TjBKRFZUTTBTR1pMWTFGZmVtWkhZbkJ5ZUZGdWMzVnpObFEwZEZsZlIzWm5VSFp1UTIwNGJuRm9VRU55ZEVaclFYcERVM1JyUTNCRFdXUnZkbEEyWTNCNmVsbFhYekpCVldsU2QydHhNRXh4V2pneE1BbzhMMDFUUno0SzwvREFUQT48L0FOU1lTX0xJQ0VOU0lOR19DT05URVhUX0RBVEE+CkFOU1lTX0xJQ0VOU0lOR19XT1JLRkxPV19TRVNTSU9OPTxEQVRBPjxJRD5jb21wdXRlcl9tYW5uZV8yNTE8L0lEPjwvREFUQT4K C:/Users/manne/OneDrive/RMP/circle-test2.fsp
+Estimate of memory required: 0.147 GiB
 
 number of processors is 8
-processors are distributed as: 2x2x2
-Peak memory used by end of initialization: 0.083894 GiB
+processors are distributed as: 1x2x4
+Peak memory used by end of initialization: 0.158410 GiB
 Running 3D Simulation
 Starting meshing
-Simulation size in gridpoints: 28 x 28 x 47
+Simulation size in gridpoints: 42 x 22 x 40
 Refined 0 mesh cells (0.000000%)
 Completed meshing!
 Meshing complete in 0.015625 seconds of CPU time
 Starting meshing
-Simulation size in gridpoints: 28 x 28 x 47
+Simulation size in gridpoints: 42 x 22 x 40
 Refined 0 mesh cells (0.000000%)
 Completed meshing!
 Meshing complete in 0.015625 seconds of CPU time
 Starting meshing
-Simulation size in gridpoints: 28 x 28 x 47
+Simulation size in gridpoints: 42 x 22 x 40
 Refined 0 mesh cells (0.000000%)
 Completed meshing!
-Meshing complete in 0.031250 seconds of CPU time
+Meshing complete in 0.000000 seconds of CPU time
 finished material properties
-Meshing Time: 0.047074 seconds, Init Electrical Material Time: 0.056041 seconds, Init Magnetic Material Time: 0.000294
+Meshing Time: 0.023732 seconds, Init Electrical Material Time: 0.006981 seconds, Init Magnetic Material Time: 0.000137
 Using selected optimization level: 2
 Selecting 3d kernel for splitFieldDirection=0 and optLevel=2
 -----------------------------------------
@@ -44,10 +44,203 @@ Adding 3D Mode source propagating in Z
 Adding 3D Mode source propagating in Z
 Adding 3D Mode source propagating in Z
 Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
+Adding 3D Mode source propagating in Z
 Starting to add boundary conditions to simulation
-Adding 3D Parallel BC
-Adding 3D Parallel BC
-Adding 3D Parallel BC
+Adding 3D PML BC
+Adding 3D PML BC
+Adding 3D PML BC
 Adding 3D Parallel BC
 Adding 3D PML BC
 Adding 3D Parallel BC
@@ -61,75 +254,227 @@ Adding 3D DFT monitor
 Adding 3D DFT monitor
 Adding 3D DFT monitor
 Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
+Adding 3D DFT monitor
 Finished initialization of 3D Simulation
 -----------------------------------------
-Peak memory used by end of meshing: 0.088857 GiB
+Peak memory used by end of meshing: 0.164689 GiB
 All processes are communicating and ready to proceed to simulation...
-Starting 17528 total iterations
-0.273847% complete. Elapsed simulation time: 2.73847e-15 secs. Max time remaining: 3 mins, 2 secs. Auto Shutoff: 1
-1.36924% complete. Elapsed simulation time: 1.36924e-14 secs. Max time remaining: 6 mins, 32 secs. Auto Shutoff: 1
-2.46463% complete. Elapsed simulation time: 2.46463e-14 secs. Max time remaining: 7 mins, 8 secs. Auto Shutoff: 1
-4.10771% complete. Elapsed simulation time: 4.10771e-14 secs. Max time remaining: 6 mins, 19 secs. Auto Shutoff: 1
-5.56823% complete. Elapsed simulation time: 5.56823e-14 secs. Max time remaining: 5 mins, 24 secs. Auto Shutoff: 0.0664332
-7.02875% complete. Elapsed simulation time: 7.02875e-14 secs. Max time remaining: 4 mins, 41 secs. Auto Shutoff: 0.0195823
-8.48926% complete. Elapsed simulation time: 8.48926e-14 secs. Max time remaining: 4 mins, 12 secs. Auto Shutoff: 0.0106991
-9.94978% complete. Elapsed simulation time: 9.94978e-14 secs. Max time remaining: 3 mins, 53 secs. Auto Shutoff: 0.0053954
-11.4103% complete. Elapsed simulation time: 1.14103e-13 secs. Max time remaining: 3 mins, 41 secs. Auto Shutoff: 0.00304576
-12.8708% complete. Elapsed simulation time: 1.28708e-13 secs. Max time remaining: 3 mins, 30 secs. Auto Shutoff: 0.00207876
-14.3313% complete. Elapsed simulation time: 1.43313e-13 secs. Max time remaining: 3 mins, 24 secs. Auto Shutoff: 0.00187783
-15.7919% complete. Elapsed simulation time: 1.57919e-13 secs. Max time remaining: 3 mins, 16 secs. Auto Shutoff: 0.00138546
-17.2524% complete. Elapsed simulation time: 1.72524e-13 secs. Max time remaining: 3 mins, 7 secs. Auto Shutoff: 0.00158801
-18.7129% complete. Elapsed simulation time: 1.87129e-13 secs. Max time remaining: 2 mins, 59 secs. Auto Shutoff: 0.000905395
-20.1734% complete. Elapsed simulation time: 2.01734e-13 secs. Max time remaining: 2 mins, 51 secs. Auto Shutoff: 0.000800275
-21.6339% complete. Elapsed simulation time: 2.16339e-13 secs. Max time remaining: 2 mins, 45 secs. Auto Shutoff: 0.000654666
-23.0945% complete. Elapsed simulation time: 2.30945e-13 secs. Max time remaining: 2 mins, 38 secs. Auto Shutoff: 0.000904935
-24.555% complete. Elapsed simulation time: 2.4555e-13 secs. Max time remaining: 2 mins, 32 secs. Auto Shutoff: 0.000745947
-26.0155% complete. Elapsed simulation time: 2.60155e-13 secs. Max time remaining: 2 mins, 27 secs. Auto Shutoff: 0.000708676
-27.476% complete. Elapsed simulation time: 2.7476e-13 secs. Max time remaining: 2 mins, 22 secs. Auto Shutoff: 0.000521459
-28.9365% complete. Elapsed simulation time: 2.89365e-13 secs. Max time remaining: 2 mins, 17 secs. Auto Shutoff: 0.00041587
-30.397% complete. Elapsed simulation time: 3.0397e-13 secs. Max time remaining: 2 mins, 13 secs. Auto Shutoff: 0.000299282
-31.8576% complete. Elapsed simulation time: 3.18576e-13 secs. Max time remaining: 2 mins, 8 secs. Auto Shutoff: 0.00023979
-33.3181% complete. Elapsed simulation time: 3.33181e-13 secs. Max time remaining: 2 mins, 4 secs. Auto Shutoff: 0.000313898
-34.7786% complete. Elapsed simulation time: 3.47786e-13 secs. Max time remaining: 2 mins, 0 secs. Auto Shutoff: 0.000236923
-36.2391% complete. Elapsed simulation time: 3.62391e-13 secs. Max time remaining: 1 min, 57 secs. Auto Shutoff: 0.000262128
-37.6996% complete. Elapsed simulation time: 3.76996e-13 secs. Max time remaining: 1 min, 53 secs. Auto Shutoff: 0.000124469
-39.1602% complete. Elapsed simulation time: 3.91602e-13 secs. Max time remaining: 1 min, 49 secs. Auto Shutoff: 0.000132303
-40.6207% complete. Elapsed simulation time: 4.06207e-13 secs. Max time remaining: 1 min, 47 secs. Auto Shutoff: 0.000105937
-41.7161% complete. Elapsed simulation time: 4.17161e-13 secs. Max time remaining: 1 min, 47 secs. Auto Shutoff: 8.54627e-05
-43.1766% complete. Elapsed simulation time: 4.31766e-13 secs. Max time remaining: 1 min, 45 secs. Auto Shutoff: 7.73812e-05
-44.6371% complete. Elapsed simulation time: 4.46371e-13 secs. Max time remaining: 1 min, 43 secs. Auto Shutoff: 8.13736e-05
-46.0976% complete. Elapsed simulation time: 4.60976e-13 secs. Max time remaining: 1 min, 40 secs. Auto Shutoff: 5.13854e-05
-47.5581% complete. Elapsed simulation time: 4.75581e-13 secs. Max time remaining: 1 min, 38 secs. Auto Shutoff: 4.72346e-05
-49.0187% complete. Elapsed simulation time: 4.90187e-13 secs. Max time remaining: 1 min, 35 secs. Auto Shutoff: 4.88069e-05
-50.114% complete. Elapsed simulation time: 5.0114e-13 secs. Max time remaining: 1 min, 36 secs. Auto Shutoff: 3.8366e-05
-51.7571% complete. Elapsed simulation time: 5.17571e-13 secs. Max time remaining: 1 min, 35 secs. Auto Shutoff: 2.99201e-05
-52.8525% complete. Elapsed simulation time: 5.28525e-13 secs. Max time remaining: 1 min, 33 secs. Auto Shutoff: 4.33915e-05
-53.9479% complete. Elapsed simulation time: 5.39479e-13 secs. Max time remaining: 1 min, 31 secs. Auto Shutoff: 3.9039e-05
-55.0433% complete. Elapsed simulation time: 5.50433e-13 secs. Max time remaining: 1 min, 31 secs. Auto Shutoff: 2.92245e-05
-56.5038% complete. Elapsed simulation time: 5.65038e-13 secs. Max time remaining: 1 min, 28 secs. Auto Shutoff: 2.31165e-05
-57.9643% complete. Elapsed simulation time: 5.79643e-13 secs. Max time remaining: 1 min, 26 secs. Auto Shutoff: 1.48015e-05
-59.0597% complete. Elapsed simulation time: 5.90597e-13 secs. Max time remaining: 1 min, 25 secs. Auto Shutoff: 1.69145e-05
-60.1551% complete. Elapsed simulation time: 6.01551e-13 secs. Max time remaining: 1 min, 23 secs. Auto Shutoff: 1.3679e-05
-61.6156% complete. Elapsed simulation time: 6.16156e-13 secs. Max time remaining: 1 min, 20 secs. Auto Shutoff: 1.07732e-05
-63.0761% complete. Elapsed simulation time: 6.30761e-13 secs. Max time remaining: 1 min, 17 secs. Auto Shutoff: 1.11458e-05
-64.5367% complete. Elapsed simulation time: 6.45367e-13 secs. Max time remaining: 1 min, 14 secs. Auto Shutoff: 1.1806e-05
-65.6321% complete. Elapsed simulation time: 6.56321e-13 secs. Max time remaining: 1 min, 12 secs. Auto Shutoff: 6.83837e-06
-100% complete. Max time remaining: 0 mins, 0 secs. Auto Shutoff: 6.83837e-06
+Starting 16179 total iterations
+0.296686% complete. Elapsed simulation time: 2.96686e-15 secs. Max time remaining: 1 min, 52 secs. Auto Shutoff: 1
+1.48343% complete. Elapsed simulation time: 1.48343e-14 secs. Max time remaining: 1 min, 46 secs. Auto Shutoff: 1
+3.06575% complete. Elapsed simulation time: 3.06575e-14 secs. Max time remaining: 1 min, 42 secs. Auto Shutoff: 1
+4.64807% complete. Elapsed simulation time: 4.64807e-14 secs. Max time remaining: 1 min, 40 secs. Auto Shutoff: 0.0417085
+6.2304% complete. Elapsed simulation time: 6.2304e-14 secs. Max time remaining: 1 min, 43 secs. Auto Shutoff: 0.00382501
+7.81272% complete. Elapsed simulation time: 7.81272e-14 secs. Max time remaining: 1 min, 41 secs. Auto Shutoff: 2.87985e-05
+8.96856% complete. Elapsed simulation time: 8.96856e-14 secs. Max time remaining: 1 min, 39 secs. Auto Shutoff: 1.55368e-06
+100% complete. Max time remaining: 0 mins, 0 secs. Auto Shutoff: 1.55368e-06
 Early termination of simulation, the autoshutoff criteria are satisfied.
-Completed 11504 iterations, or 6.563206e-13s of Simulation Time
-Peak memory used running the simulation: 0.088872 GiB
+Completed 1451 iterations, or 8.968557e-14s of Simulation Time
+Peak memory used running the simulation: 0.164704 GiB
 Process 0 starting to collect data
     collecting monitor data
     collecting source data
 Finished collecting data
-Simulation completed successfully at: Tue Jul 29 20:40:35 2025
-Peak memory used in the simulation (GiB): 0.089810
-Overall wall time measurements in seconds: 137.938849
-  time to mesh and initialize: 0.245644
-  time to run FDTD simulation: 136.756593
+Simulation completed successfully at: Sat Sep 6 01:05:18 2025
+Peak memory used in the simulation (GiB): 0.175168
+Overall wall time measurements in seconds: 13.098876
+  time to mesh and initialize: 0.596962
+  time to run FDTD simulation: 9.789572
   time to checkpoint simulation: 0.000000
-  time to finalize data and save to files: 0.246708
-  miscellaneous time: 0.689831
-  FDTD solver speed on process 0 (Mnodes/s): 3.099663
-  total FDTD solver speed on 8 processes (Mnodes/s): 24.797306
+  time to finalize data and save to files: 1.043881
+  miscellaneous time: 1.668383
+  FDTD solver speed on process 0 (Mnodes/s): 5.478172
+  total FDTD solver speed on 8 processes (Mnodes/s): 43.825378
 
